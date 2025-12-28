@@ -36,7 +36,7 @@ module sync_fifo #(
   //read side
   always @(posedge clk) begin
     if (!rstn) begin
-      rstn <= 0;
+      rptr <= 0;
     end else begin
       if (rd_en & !empty) begin
         dout <= fifo[rptr];

@@ -1,4 +1,4 @@
-module tb;
+module fifo_tb;
 
   reg         clk;
   reg  [15:0] din;
@@ -66,7 +66,7 @@ module tb;
       while (empty) begin
         rd_en <= 0;
 
-        display("[%0t] FIFO is empty, wait for writes to happen", $time);
+        $display("[%0t] FIFO is empty, wait for writes to happen", $time);
         @(posedge clk);
       end
       ;
