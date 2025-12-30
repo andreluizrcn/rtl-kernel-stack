@@ -1,25 +1,24 @@
 module sync_fifo #(
-    parameter DEPTH = 8,
-    DWIDTH = 16
+    parameter int DEPTH  = 8,
+    parameter int DWIDTH = 16
 ) (
-    input                   rstn,  // Active low reset
-    clk,  // Clock
-    wr_en,  // Write enable
-    rd_en,  // Read enable
-    input      [DWIDTH-1:0] din,   // Data written into FIFO
-    output reg [DWIDTH-1:0] dout,  // Data read from FIFO
-    output                  empty, // FIFO is empty when high
-    full  // FIFO is full when high
+    input  logic              rstn,   // Active low reset
+    input  logic              clk,    // Clock
+    input  logic              wr_en,  // Write enable
+    input  logic              rd_en,  // Read enable
+    input  logic [DWIDTH-1:0] din,    // Data written into FIFO
+    output logic [DWIDTH-1:0] dout,   // Data read from FIFO
+    output logic              empty,  // FIFO is empty when high
+    output logic              full    // FIFO is full when high
 );
 
   //write side
-  reg [$clog2(DEPTH)-1:0] wptr;
-  reg [$clog2(DEPTH)-1:0] rptr;
-  reg [DWIDTH-1:0] fifo[DEPTH];  // width x depth = mem size
+  logic [$clog2(DEPTH)-1:0] wptr, rptr;
+  logic [DWIDTH-1:0] fifo[DEPTH];  // width x depth = mem size
 
-  always @(posedge clk) begin
+  always_ff @(posedge clk or negedge rstn) begin
     if (!rstn) begin
-      wptr <= 0;
+      wptr <= '0;
     end else begin
       if (wr_en & !full) begin
         fifo[wptr] <= din;
@@ -34,9 +33,9 @@ module sync_fifo #(
   end
 
   //read side
-  always @(posedge clk) begin
+  always_ff @(posedge clk or negedge rstn) begin
     if (!rstn) begin
-      rptr <= 0;
+      rptr <= '0;
     end else begin
       if (rd_en & !empty) begin
         dout <= fifo[rptr];
@@ -45,6 +44,9 @@ module sync_fifo #(
     end
   end
 
-  assign full  = (wptr + 1) == rptr;
-  assign empty = wptr == rptr;
+  always_comb begin
+    full  = (wptr + 1) == rptr;
+    empty = wptr == rptr;
+  end
+
 endmodule
