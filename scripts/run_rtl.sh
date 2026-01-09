@@ -10,7 +10,7 @@ mkdir -p "$RESULTS_DIR"
 MODULE=$1
 
 if [ -z "$MODULE" ]; then
-  echo "Uso: ./run_rtl.sh {fifo|fsm|uart}"
+  echo "Usage: ./run_rtl.sh {fifo|fsm|uart}"
   exit 1
 fi
 
@@ -28,7 +28,7 @@ case $MODULE in
     TB="$RTL_DIR/uart_tx/uart_tx_tb.sv"
     ;;
   *)
-    echo "Módulo inválido: $MODULE"
+    echo "Invalid module: $MODULE"
     exit 1
     ;;
 esac
@@ -36,11 +36,11 @@ esac
 OUT="sim_$MODULE.out"
 LOG="$RESULTS_DIR/${MODULE}_sim.log"
 
-echo "[INFO] Compilando $MODULE..."
+echo "[INFO] Compiling $MODULE..."
 iverilog -g2012 "$SRC" "$TB" -o "$OUT"
 
-echo "[INFO] Rodando simulação..."
+echo "[INFO] Running simulation..."
 vvp "$OUT" | tee "$LOG"
 
-echo "[OK] Simulação $MODULE finalizada"
+echo "[OK] $MODULE simulation completed successfully"
 
