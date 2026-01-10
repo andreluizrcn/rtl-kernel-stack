@@ -27,7 +27,7 @@ case $MODULE in
     ;;
   fsm)
     SRC="$RTL_DIR/fsm/protocol_fsm.sv"
-    TB="$RTL_DIR/fsm/protocol_fsm_tb.sv"
+    TB="$RTL_DIR/fsm/protocol_tb_fsm.sv"
     VCD="fsm.vcd"
     ;;
   uart)

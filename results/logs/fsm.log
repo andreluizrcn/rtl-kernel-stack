@@ -1,0 +1,13 @@
+VCD info: dumpfile fsm.vcd opened for output.
+ time | rst in | dout 
+   0 |  0   0  |  0
+20000 |  1   0  |  0
+30000 |  1   1  |  0
+35000 |  1   1  |  1
+45000 |  1   1  |  0
+50000 |  1   0  |  0
+90000 |  1   1  |  0
+95000 |  1   1  |  1
+105000 |  1   1  |  0
+130000 |  1   0  |  0
+/home/alkaleus/rtl-kernel-stack/rtl/fsm/protocol_tb_fsm.sv:58: $finish called at 170000 (1ps)

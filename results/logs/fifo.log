@@ -1,0 +1,65 @@
+VCD info: dumpfile fifo.vcd opened for output.
+[0] [FIFO] wr_en=0 din=0xxxxx rd_en=0 dout=0xxxxx empty=1 full=0
+[10] FIFO is empty, wait for writes to happen
+[10] clk i=0 wr_en=0 din=0xxxxx 
+[10] [FIFO] wr_en=0 din=0x5e81 rd_en=0 dout=0xxxxx empty=1 full=0
+[30] clk i=1 wr_en=0 din=0x5e81 
+[30] FIFO is empty, wait for writes to happen
+[30] [FIFO] wr_en=1 din=0x5663 rd_en=0 dout=0xxxxx empty=1 full=0
+[50] FIFO is empty, wait for writes to happen
+[50] clk i=2 wr_en=1 din=0x5663 
+[50] [FIFO] wr_en=1 din=0x998d rd_en=0 dout=0xxxxx empty=0 full=0
+[70] clk i=3 wr_en=1 din=0x998d 
+[70] [FIFO] wr_en=1 din=0x5212 rd_en=1 dout=0xxxxx empty=0 full=0
+[90] clk rd_en=1 rdata=0xxxxx 
+[90] clk i=4 wr_en=1 din=0x5212 
+[90] [FIFO] wr_en=0 din=0xcd3d rd_en=1 dout=0x5663 empty=0 full=0
+[110] clk i=5 wr_en=0 din=0xcd3d 
+[110] clk rd_en=1 rdata=0xxxxx 
+[110] [FIFO] wr_en=1 din=0xf78c rd_en=1 dout=0x998d empty=0 full=0
+[130] clk rd_en=1 rdata=0x5663 
+[130] clk i=6 wr_en=1 din=0xf78c 
+[130] [FIFO] wr_en=1 din=0xd2aa rd_en=0 dout=0x5212 empty=0 full=0
+[150] clk i=7 wr_en=1 din=0xd2aa 
+[150] clk rd_en=0 rdata=0x998d 
+[150] [FIFO] wr_en=1 din=0x7277 rd_en=0 dout=0x5212 empty=0 full=0
+[170] clk rd_en=0 rdata=0x5212 
+[170] clk i=8 wr_en=1 din=0x7277 
+[170] [FIFO] wr_en=0 din=0x96ce rd_en=1 dout=0x5212 empty=0 full=0
+[190] clk i=9 wr_en=0 din=0x96ce 
+[190] clk rd_en=1 rdata=0x5212 
+[190] [FIFO] wr_en=0 din=0x4ec5 rd_en=0 dout=0xf78c empty=0 full=0
+[210] clk rd_en=0 rdata=0x5212 
+[210] clk i=10 wr_en=0 din=0x4ec5 
+[210] [FIFO] wr_en=1 din=0x2665 rd_en=1 dout=0xf78c empty=0 full=0
+[230] clk i=11 wr_en=1 din=0x2665 
+[230] clk rd_en=1 rdata=0xf78c 
+[230] [FIFO] wr_en=1 din=0x870a rd_en=0 dout=0xd2aa empty=0 full=0
+[250] clk rd_en=0 rdata=0xf78c 
+[250] clk i=12 wr_en=1 din=0x870a 
+[250] [FIFO] wr_en=0 din=0xcc9d rd_en=0 dout=0xd2aa empty=0 full=0
+[270] clk i=13 wr_en=0 din=0xcc9d 
+[270] clk rd_en=0 rdata=0xd2aa 
+[270] [FIFO] wr_en=0 din=0xb813 rd_en=1 dout=0xd2aa empty=0 full=0
+[290] clk rd_en=1 rdata=0xd2aa 
+[290] clk i=14 wr_en=0 din=0xb813 
+[290] [FIFO] wr_en=1 din=0x2ad5 rd_en=1 dout=0x7277 empty=0 full=0
+[310] clk i=15 wr_en=1 din=0x2ad5 
+[310] clk rd_en=1 rdata=0xd2aa 
+[310] [FIFO] wr_en=0 din=0x3eae rd_en=1 dout=0x2665 empty=0 full=0
+[330] clk rd_en=1 rdata=0x7277 
+[330] clk i=16 wr_en=0 din=0x3eae 
+[330] [FIFO] wr_en=1 din=0x650a rd_en=1 dout=0x870a empty=0 full=0
+[350] clk i=17 wr_en=1 din=0x650a 
+[350] clk rd_en=1 rdata=0x2665 
+[350] [FIFO] wr_en=0 din=0x4c3c rd_en=0 dout=0x2ad5 empty=0 full=0
+[370] clk rd_en=0 rdata=0x870a 
+[370] clk i=18 wr_en=0 din=0x4c3c 
+[370] [FIFO] wr_en=1 din=0x34d8 rd_en=0 dout=0x2ad5 empty=0 full=0
+[390] clk i=19 wr_en=1 din=0x34d8 
+[390] clk rd_en=0 rdata=0x2ad5 
+[390] [FIFO] wr_en=0 din=0x1289 rd_en=1 dout=0x2ad5 empty=0 full=0
+[410] clk rd_en=1 rdata=0x2ad5 
+[410] [FIFO] wr_en=0 din=0x1289 rd_en=0 dout=0x650a empty=0 full=0
+[430] clk rd_en=0 rdata=0x2ad5 
+/home/alkaleus/rtl-kernel-stack/rtl/fifo/fifo_tb.sv:88: $finish called at 930 (1s)
