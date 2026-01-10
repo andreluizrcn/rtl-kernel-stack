@@ -19,6 +19,13 @@ module protocol_tb_fsm;
   always #5 clk = ~clk;
 
 
+  // Dump waveform
+  initial begin
+    $dumpfile("fsm.vcd");
+    $dumpvars(0, protocol_tb_fsm);
+  end
+
+  // Stimulus
   initial begin
     // Init
     rstn = 0;

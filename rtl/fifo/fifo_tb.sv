@@ -22,7 +22,14 @@ module fifo_tb;
       .full (full)
   );
 
+  // Clock generation: 50 MHz
   always #10 clk <= ~clk;
+
+// Dump waveform
+  initial begin
+    $dumpfile("fifo.vcd");
+    $dumpvars(0, fifo_tb);
+  end
 
   initial begin
     clk   <= 0;
