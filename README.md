@@ -17,8 +17,7 @@ RTL (Digital Hardware) → Kernel Module → Userspace API → Automation Layer
 1. **RTL Layer** (SystemVerilog)
    - Synchronous FIFO with configurable depth/width
    - Protocol FSM (IDLE→REQ→WAIT→DONE)
-   - UART transmitter with baud-rate control
-
+  
 2. **Kernel Layer** (Linux)
    - Character device driver with `file_operations`
    - Concurrent access control (mutex)
