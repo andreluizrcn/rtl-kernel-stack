@@ -1,9 +1,12 @@
+#!/usr/bin/env python3
+# run_all.py - Main automation script for rtl-kernel-stack
+
 import subprocess
 import sys
 import os
 from datetime import datetime
 
-class ProjectAnchor:
+class RTLKernelStack:
     def __init__(self):
         self.root_dir = os.path.dirname(os.path.abspath(__file__))
         self.results_dir = os.path.join(self.root_dir, "results")
@@ -115,7 +118,7 @@ class ProjectAnchor:
     def run_all(self):
         """Run the entire pipeline"""
         self.log("=" * 60)
-        self.log("STARTING PROJECT ANCHOR - COMPLETE EXECUTION")
+        self.log("STARTING RTL-KERNEL-STACK - COMPLETE EXECUTION")
         self.log("=" * 60)
         
         # Phase 1: RTL Simulations
@@ -162,7 +165,7 @@ class ProjectAnchor:
 def main():
     """Main function"""
     print("\n" + "═" * 70)
-    print("PROJECT ANCHOR - Integrated Hardware-Software System")
+    print("RTL-KERNEL-STACK - Integrated Hardware-Software System")
     print("═" * 70)
     
     # Check dependencies
@@ -182,7 +185,7 @@ def main():
         print("[INFO] Some functionalities may not be available")
     
     # Execute pipeline
-    project = ProjectAnchor()
+    project = RTLKernelStack()
     
     try:
         success = project.run_all()
