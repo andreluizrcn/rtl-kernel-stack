@@ -1,52 +1,69 @@
+// rtl/fifo/fifo.sv
 module sync_fifo #(
-    parameter int DEPTH  = 8,
-    parameter int DWIDTH = 16
+    parameter DATA_WIDTH = 32,
+    parameter ADDR_WIDTH = 4,   // Depth = 2^ADDR_WIDTH
+    parameter FIFO_DEPTH = 16
 ) (
-    input  logic              rstn,   // Active low reset
-    input  logic              clk,    // Clock
-    input  logic              wr_en,  // Write enable
-    input  logic              rd_en,  // Read enable
-    input  logic [DWIDTH-1:0] din,    // Data written into FIFO
-    output logic [DWIDTH-1:0] dout,   // Data read from FIFO
-    output logic              empty,  // FIFO is empty when high
-    output logic              full    // FIFO is full when high
+    input wire clk,
+    input wire rst_n,
+
+    // Write interface
+    input wire wr_en,
+    input wire [DATA_WIDTH-1:0] data_in,
+    output wire full,
+
+    // Read interface
+    input wire rd_en,
+    output wire [DATA_WIDTH-1:0] data_out,
+    output wire empty
 );
 
-  //write side
-  logic [$clog2(DEPTH)-1:0] wptr, rptr;
-  logic [DWIDTH-1:0] fifo[DEPTH];  // width x depth = mem size
+  // Internal memory
+  reg [DATA_WIDTH-1:0] mem[0:FIFO_DEPTH-1];
 
-  always_ff @(posedge clk or negedge rstn) begin
-    if (!rstn) begin
-      wptr <= '0;
-    end else begin
-      if (wr_en & !full) begin
-        fifo[wptr] <= din;
-        wptr <= wptr + 1;
-      end
+  // Pointers
+  reg [ADDR_WIDTH:0] wr_ptr = 0;  // MSB for full/empty detection
+  reg [ADDR_WIDTH:0] rd_ptr = 0;
+
+  // Status flags
+  wire [ADDR_WIDTH:0] wr_ptr_gray;
+  wire [ADDR_WIDTH:0] rd_ptr_gray;
+
+  // Empty when pointers are equal
+  assign empty = (wr_ptr == rd_ptr);
+
+  // Full when pointers differ by FIFO_DEPTH
+  assign full = ((wr_ptr[ADDR_WIDTH-1:0] == rd_ptr[ADDR_WIDTH-1:0]) &&
+                   (wr_ptr[ADDR_WIDTH] != rd_ptr[ADDR_WIDTH]));
+
+  // Data output
+  assign data_out = mem[rd_ptr[ADDR_WIDTH-1:0]];
+
+  // Write operation
+  always_ff @(posedge clk or negedge rst_n) begin
+    if (!rst_n) begin
+      wr_ptr <= 0;
+    end else if (wr_en && !full) begin
+      mem[wr_ptr[ADDR_WIDTH-1:0]] <= data_in;
+      wr_ptr <= wr_ptr + 1;
     end
   end
 
-  initial begin
-    $monitor("[%0t] [FIFO] wr_en=%0b din=0x%0h rd_en=%0b dout=0x%0h empty=%0b full=%0b", $time,
-             wr_en, din, rd_en, dout, empty, full);
-  end
-
-  //read side
-  always_ff @(posedge clk or negedge rstn) begin
-    if (!rstn) begin
-      rptr <= '0;
-    end else begin
-      if (rd_en & !empty) begin
-        dout <= fifo[rptr];
-        rptr <= rptr + 1;
-      end
+  // Read operation
+  always_ff @(posedge clk or negedge rst_n) begin
+    if (!rst_n) begin
+      rd_ptr <= 0;
+    end else if (rd_en && !empty) begin
+      rd_ptr <= rd_ptr + 1;
     end
   end
 
-  always_comb begin
-    full  = (wptr + 1) == rptr;
-    empty = wptr == rptr;
-  end
+  // Gray code conversion (for clock domain crossing if async)
+  function [ADDR_WIDTH:0] binary_to_gray(input [ADDR_WIDTH:0] bin);
+    binary_to_gray = bin ^ (bin >> 1);
+  endfunction
+
+  assign wr_ptr_gray = binary_to_gray(wr_ptr);
+  assign rd_ptr_gray = binary_to_gray(rd_ptr);
 
 endmodule
