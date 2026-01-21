@@ -1,4 +1,4 @@
-// kernel/ll_driver/ll_driver.c
+// kernel/ll_driver/ll_driver.c - FIXED VERSION
 #include <linux/cdev.h>
 #include <linux/device.h>
 #include <linux/fs.h>
@@ -16,7 +16,6 @@
 static int major_number;
 static struct class *ll_class = NULL;
 static struct device *ll_device = NULL;
-static struct cdev ll_cdev;
 
 // Mutex for concurrent access
 static DEFINE_MUTEX(ll_mutex);
@@ -35,50 +34,42 @@ static struct ll_device_data dev_data;
 // File operations
 static int ll_open(struct inode *inodep, struct file *filep) {
   if (!mutex_trylock(&ll_mutex)) {
-    printk(KERN_ALERT "LL_DRIVER: Device in use by another process\n");
+    printk(KERN_ALERT "RTL-KERNEL-STACK: Device in use\n");
     return -EBUSY;
   }
-  printk(KERN_INFO "LL_DRIVER: Device opened\n");
+  printk(KERN_INFO "RTL-KERNEL-STACK: Device opened\n");
   return 0;
 }
 
 static int ll_release(struct inode *inodep, struct file *filep) {
   mutex_unlock(&ll_mutex);
-  printk(KERN_INFO "LL_DRIVER: Device closed\n");
+  printk(KERN_INFO "RTL-KERNEL-STACK: Device closed\n");
   return 0;
 }
 
 static ssize_t ll_read(struct file *filep, char __user *buffer, size_t len,
                        loff_t *offset) {
-  ssize_t retval = 0;
-
-  // Wait until data is ready (blocking mode)
+  // Wait until data is ready
   if (filep->f_flags & O_NONBLOCK) {
-    if (!data_ready) {
+    if (!data_ready)
       return -EAGAIN;
-    }
   } else {
     wait_event_interruptible(ll_wait_queue, data_ready);
   }
 
   // Copy data to userspace
   if (copy_to_user(buffer, &dev_data.buffer, sizeof(dev_data.buffer))) {
-    retval = -EFAULT;
-    goto read_cleanup;
+    return -EFAULT;
   }
 
-  retval = sizeof(dev_data.buffer);
   dev_data.timestamp = ktime_get_ns();
-
-read_cleanup:
   data_ready = 0;
-  return retval;
+
+  return sizeof(dev_data.buffer);
 }
 
 static ssize_t ll_write(struct file *filep, const char __user *buffer,
                         size_t len, loff_t *offset) {
-  ssize_t retval = 0;
-
   if (len != sizeof(dev_data.buffer)) {
     return -EINVAL;
   }
@@ -88,8 +79,7 @@ static ssize_t ll_write(struct file *filep, const char __user *buffer,
     return -EFAULT;
   }
 
-  // Simulate processing (replace with real hardware)
-  printk(KERN_INFO "LL_DRIVER: Received data 0x%08x\n", dev_data.buffer);
+  printk(KERN_INFO "RTL-KERNEL-STACK: Received 0x%08x\n", dev_data.buffer);
 
   // Mark data as ready
   data_ready = 1;
@@ -105,9 +95,6 @@ static long ll_ioctl(struct file *filep, unsigned int cmd, unsigned long arg) {
                         sizeof(dev_data.timestamp))
                ? -EFAULT
                : 0;
-  case 0x02: // Enable/disable IRQ
-    dev_data.irq_enabled = (arg != 0);
-    return 0;
   default:
     return -ENOTTY;
   }
@@ -123,20 +110,20 @@ static struct file_operations fops = {
 };
 
 static int __init ll_driver_init(void) {
-  printk(KERN_INFO "LL_DRIVER: Initializing...\n");
+  printk(KERN_INFO "RTL-KERNEL-STACK: Initializing...\n");
 
-  // Dynamically allocate major number
+  // Allocate major number
   major_number = register_chrdev(0, DEVICE_NAME, &fops);
   if (major_number < 0) {
-    printk(KERN_ALERT "LL_DRIVER: Failed to register major number\n");
+    printk(KERN_ALERT "Failed to register major number\n");
     return major_number;
   }
 
-  // Create device class
-  ll_class = class_create(THIS_MODULE, CLASS_NAME);
+  // Create device class (FIXED: removed THIS_MODULE parameter)
+  ll_class = class_create(CLASS_NAME);
   if (IS_ERR(ll_class)) {
     unregister_chrdev(major_number, DEVICE_NAME);
-    printk(KERN_ALERT "LL_DRIVER: Failed to create class\n");
+    printk(KERN_ALERT "Failed to create class\n");
     return PTR_ERR(ll_class);
   }
 
@@ -146,33 +133,32 @@ static int __init ll_driver_init(void) {
   if (IS_ERR(ll_device)) {
     class_destroy(ll_class);
     unregister_chrdev(major_number, DEVICE_NAME);
-    printk(KERN_ALERT "LL_DRIVER: Failed to create device\n");
+    printk(KERN_ALERT "Failed to create device\n");
     return PTR_ERR(ll_device);
   }
 
-  // Initialize data
+  // Initialize
   dev_data.buffer = 0;
   dev_data.timestamp = 0;
   dev_data.irq_enabled = 0;
   data_ready = 0;
 
-  printk(KERN_INFO "LL_DRIVER: Initialized with major number %d\n",
+  printk(KERN_INFO "RTL-KERNEL-STACK: Initialized with major %d\n",
          major_number);
   return 0;
 }
 
 static void __exit ll_driver_exit(void) {
   device_destroy(ll_class, MKDEV(major_number, 0));
-  class_unregister(ll_class);
   class_destroy(ll_class);
   unregister_chrdev(major_number, DEVICE_NAME);
-  printk(KERN_INFO "LL_DRIVER: Module removed\n");
+  printk(KERN_INFO "RTL-KERNEL-STACK: Removed\n");
 }
 
 module_init(ll_driver_init);
 module_exit(ll_driver_exit);
 
 MODULE_LICENSE("GPL");
-MODULE_AUTHOR("Rtl-kernel-stack");
-MODULE_DESCRIPTION("Low-Latency Hardware Driver");
+MODULE_AUTHOR("RTL-Kernel-Stack");
+MODULE_DESCRIPTION("Low-Latency Driver");
 MODULE_VERSION("1.0");

@@ -1,0 +1,330 @@
+[2026-01-21 18:48:57] [INFO] ============================================================
+[2026-01-21 18:48:57] [INFO] STARTING RTL-KERNEL-STACK - COMPLETE EXECUTION
+[2026-01-21 18:48:57] [INFO] ============================================================
+[2026-01-21 18:48:57] [INFO] 
+============================================================
+[2026-01-21 18:48:57] [INFO] PHASE 1: RTL SIMULATION
+[2026-01-21 18:48:57] [INFO] ============================================================
+[2026-01-21 18:48:57] [INFO] Starting RTL simulation: fifo
+[2026-01-21 18:48:57] [ERROR] RTL simulation failed: fifo
+[2026-01-21 18:48:57] [ERROR] Stderr: /home/alkaleus/rtl-kernel-stack/rtl/fifo/fifo_tb.sv:14: error: port ``rstn'' is not a port of u_sync_fifo.
+/home/alkaleus/rtl-kernel-stack/rtl/fifo/fifo_tb.sv:14: error: port ``din'' is not a port of u_sync_fifo.
+/home/alkaleus/rtl-kernel-stack/rtl/fifo/fifo_tb.sv:14: error: port ``dout'' is not a port of u_sync_fifo.
+3 error(s) during elaboration.
+
+[2026-01-21 18:48:57] [ERROR] Stopping execution due to failure in fifo
+[2026-01-21 18:59:56] [INFO] ============================================================
+[2026-01-21 18:59:56] [INFO] STARTING RTL-KERNEL-STACK - COMPLETE EXECUTION
+[2026-01-21 18:59:56] [INFO] ============================================================
+[2026-01-21 18:59:56] [INFO] 
+============================================================
+[2026-01-21 18:59:56] [INFO] PHASE 1: RTL SIMULATION
+[2026-01-21 18:59:56] [INFO] ============================================================
+[2026-01-21 18:59:56] [INFO] Starting RTL simulation: fifo
+[2026-01-21 18:59:56] [INFO] RTL simulation completed: fifo
+[2026-01-21 18:59:56] [INFO] Starting RTL simulation: fsm
+[2026-01-21 18:59:56] [INFO] RTL simulation completed: fsm
+[2026-01-21 18:59:56] [INFO] Starting RTL simulation: uart
+[2026-01-21 18:59:56] [ERROR] RTL simulation failed: uart
+[2026-01-21 18:59:56] [ERROR] Stderr: /home/alkaleus/rtl-kernel-stack/rtl/uart_tx/uart_tx.sv: No such file or directory
+No top level modules, and no -s option.
+
+[2026-01-21 18:59:56] [ERROR] Stopping execution due to failure in uart
+[2026-01-21 19:01:02] [INFO] ============================================================
+[2026-01-21 19:01:02] [INFO] STARTING RTL-KERNEL-STACK - COMPLETE EXECUTION
+[2026-01-21 19:01:02] [INFO] ============================================================
+[2026-01-21 19:01:02] [INFO] 
+============================================================
+[2026-01-21 19:01:02] [INFO] PHASE 1: RTL SIMULATION
+[2026-01-21 19:01:02] [INFO] ============================================================
+[2026-01-21 19:01:02] [INFO] Starting RTL simulation: fifo
+[2026-01-21 19:01:02] [INFO] RTL simulation completed: fifo
+[2026-01-21 19:01:02] [INFO] Starting RTL simulation: fsm
+[2026-01-21 19:01:02] [INFO] RTL simulation completed: fsm
+[2026-01-21 19:01:02] [INFO] Starting RTL simulation: uart
+[2026-01-21 19:01:02] [ERROR] RTL simulation failed: uart
+[2026-01-21 19:01:02] [ERROR] Stderr: /home/alkaleus/rtl-kernel-stack/rtl/uart_tx/uart_tx.sv: No such file or directory
+No top level modules, and no -s option.
+
+[2026-01-21 19:01:02] [ERROR] Stopping execution due to failure in uart
+[2026-01-21 19:05:06] [INFO] ============================================================
+[2026-01-21 19:05:06] [INFO] STARTING RTL-KERNEL-STACK COMPLETE EXECUTION
+[2026-01-21 19:05:06] [INFO] ============================================================
+[2026-01-21 19:05:06] [INFO] 
+============================================================
+[2026-01-21 19:05:06] [INFO] PHASE 1: RTL SIMULATION (FIFO + FSM only)
+[2026-01-21 19:05:06] [INFO] ============================================================
+[2026-01-21 19:05:06] [INFO] Starting RTL simulation: fifo
+[2026-01-21 19:05:06] [ERROR] RTL simulation failed: fifo
+[2026-01-21 19:05:06] [ERROR] Stderr: 
+[2026-01-21 19:05:06] [ERROR] Stopping execution due to failure in fifo
+[2026-01-21 19:05:48] [INFO] ============================================================
+[2026-01-21 19:05:48] [INFO] STARTING RTL-KERNEL-STACK COMPLETE EXECUTION
+[2026-01-21 19:05:48] [INFO] ============================================================
+[2026-01-21 19:05:48] [INFO] 
+============================================================
+[2026-01-21 19:05:48] [INFO] PHASE 1: RTL SIMULATION (FIFO + FSM only)
+[2026-01-21 19:05:48] [INFO] ============================================================
+[2026-01-21 19:05:48] [INFO] Starting RTL simulation: fifo
+[2026-01-21 19:05:48] [INFO] RTL simulation completed: fifo
+[2026-01-21 19:05:48] [INFO] Starting RTL simulation: fsm
+[2026-01-21 19:05:48] [INFO] RTL simulation completed: fsm
+[2026-01-21 19:05:48] [INFO] 
+============================================================
+[2026-01-21 19:05:48] [INFO] PHASE 2: KERNEL DRIVER
+[2026-01-21 19:05:48] [INFO] ============================================================
+[2026-01-21 19:05:48] [INFO] Starting kernel driver test
+[2026-01-21 19:05:52] [INFO] ============================================================
+[2026-01-21 19:05:52] [INFO] STARTING RTL-KERNEL-STACK COMPLETE EXECUTION
+[2026-01-21 19:05:52] [INFO] ============================================================
+[2026-01-21 19:05:52] [INFO] 
+============================================================
+[2026-01-21 19:05:52] [INFO] PHASE 1: RTL SIMULATION (FIFO + FSM only)
+[2026-01-21 19:05:52] [INFO] ============================================================
+[2026-01-21 19:05:52] [INFO] Starting RTL simulation: fifo
+[2026-01-21 19:05:52] [INFO] RTL simulation completed: fifo
+[2026-01-21 19:05:52] [INFO] Starting RTL simulation: fsm
+[2026-01-21 19:05:52] [INFO] RTL simulation completed: fsm
+[2026-01-21 19:05:52] [INFO] 
+============================================================
+[2026-01-21 19:05:52] [INFO] PHASE 2: KERNEL DRIVER
+[2026-01-21 19:05:52] [INFO] ============================================================
+[2026-01-21 19:05:52] [INFO] Starting kernel driver test
+[2026-01-21 19:07:37] [INFO] ============================================================
+[2026-01-21 19:07:37] [INFO] STARTING RTL-KERNEL-STACK COMPLETE EXECUTION
+[2026-01-21 19:07:37] [INFO] ============================================================
+[2026-01-21 19:07:37] [INFO] 
+============================================================
+[2026-01-21 19:07:37] [INFO] PHASE 1: RTL SIMULATION (FIFO + FSM only)
+[2026-01-21 19:07:37] [INFO] ============================================================
+[2026-01-21 19:07:37] [INFO] Starting RTL simulation: fifo
+[2026-01-21 19:07:37] [INFO] RTL simulation completed: fifo
+[2026-01-21 19:07:37] [INFO] Starting RTL simulation: fsm
+[2026-01-21 19:07:37] [INFO] RTL simulation completed: fsm
+[2026-01-21 19:07:37] [INFO] 
+============================================================
+[2026-01-21 19:07:37] [INFO] PHASE 2: KERNEL DRIVER
+[2026-01-21 19:07:37] [INFO] ============================================================
+[2026-01-21 19:07:37] [INFO] Starting kernel driver test
+[2026-01-21 19:07:38] [ERROR] Driver test failed
+[2026-01-21 19:07:38] [ERROR] Stderr: ll_driver.c: In function ‘ll_write’:
+ll_driver.c:80:11: warning: unused variable ‘retval’ [-Wunused-variable]
+   80 |   ssize_t retval = 0;
+      |           ^~~~~~
+In file included from /usr/src/kernels/6.18.5-100.fc42.x86_64/include/linux/printk.h:6,
+                 from /usr/src/kernels/6.18.5-100.fc42.x86_64/include/asm-generic/bug.h:22,
+                 from /usr/src/kernels/6.18.5-100.fc42.x86_64/arch/x86/include/asm/bug.h:108,
+                 from /usr/src/kernels/6.18.5-100.fc42.x86_64/arch/x86/include/asm/alternative.h:9,
+                 from /usr/src/kernels/6.18.5-100.fc42.x86_64/arch/x86/include/asm/barrier.h:5,
+                 from /usr/src/kernels/6.18.5-100.fc42.x86_64/include/linux/list.h:11,
+                 from /usr/src/kernels/6.18.5-100.fc42.x86_64/include/linux/kobject.h:19,
+                 from /usr/src/kernels/6.18.5-100.fc42.x86_64/include/linux/cdev.h:5,
+                 from ll_driver.c:2:
+ll_driver.c: In function ‘ll_driver_init’:
+/usr/src/kernels/6.18.5-100.fc42.x86_64/include/linux/init.h:174:22: error: passing argument 1 of ‘class_create’ from incompatible pointer type [-Wincompatible-pointer-types]
+  174 | #define THIS_MODULE (&__this_module)
+      |                     ~^~~~~~~~~~~~~~~
+      |                      |
+      |                      struct module *
+ll_driver.c:136:27: note: in expansion of macro ‘THIS_MODULE’
+  136 |   ll_class = class_create(THIS_MODULE, CLASS_NAME);
+      |                           ^~~~~~~~~~~
+In file included from /usr/src/kernels/6.18.5-100.fc42.x86_64/include/linux/device.h:30,
+                 from /usr/src/kernels/6.18.5-100.fc42.x86_64/include/linux/cdev.h:8:
+/usr/src/kernels/6.18.5-100.fc42.x86_64/include/linux/device/class.h:226:54: note: expected ‘const char *’ but argument is of type ‘struct module *’
+  226 | struct class * __must_check class_create(const char *name);
+      |                                          ~~~~~~~~~~~~^~~~
+ll_driver.c:136:14: error: too many arguments to function ‘class_create’; expected 1, have 2
+  136 |   ll_class = class_create(THIS_MODULE, CLASS_NAME);
+      |              ^~~~~~~~~~~~
+/usr/src/kernels/6.18.5-100.fc42.x86_64/include/linux/device/class.h:226:29: note: declared here
+  226 | struct class * __must_check class_create(const char *name);
+      |                             ^~~~~~~~~~~~
+ll_driver.c: At top level:
+ll_driver.c:19:20: warning: ‘ll_cdev’ defined but not used [-Wunused-variable]
+   19 | static struct cdev ll_cdev;
+      |                    ^~~~~~~
+make[4]: *** [/usr/src/kernels/6.18.5-100.fc42.x86_64/scripts/Makefile.build:287: ll_driver.o] Error 1
+make[3]: *** [/usr/src/kernels/6.18.5-100.fc42.x86_64/Makefile:2046: .] Error 2
+make[2]: *** [/usr/src/kernels/6.18.5-100.fc42.x86_64/Makefile:248: __sub-make] Error 2
+make[1]: *** [Makefile:248: __sub-make] Error 2
+make: *** [Makefile:8: all] Error 2
+
+[2026-01-21 19:07:38] [WARN] Driver failed, continuing with userspace...
+[2026-01-21 19:07:38] [INFO] 
+============================================================
+[2026-01-21 19:07:38] [INFO] PHASE 3: USERSPACE
+[2026-01-21 19:07:38] [INFO] ============================================================
+[2026-01-21 19:07:38] [INFO] Compiling userspace programs
+[2026-01-21 19:07:38] [INFO] ✓ C program compiled
+[2026-01-21 19:07:38] [INFO] ✓ C++ program compiled
+[2026-01-21 19:07:38] [INFO] Running userspace tests
+[2026-01-21 19:07:38] [INFO] Testing C program (driver latency)...
+[2026-01-21 19:09:43] [INFO] ============================================================
+[2026-01-21 19:09:43] [INFO] STARTING RTL-KERNEL-STACK COMPLETE EXECUTION
+[2026-01-21 19:09:43] [INFO] ============================================================
+[2026-01-21 19:09:43] [INFO] 
+============================================================
+[2026-01-21 19:09:43] [INFO] PHASE 1: RTL SIMULATION (FIFO + FSM only)
+[2026-01-21 19:09:43] [INFO] ============================================================
+[2026-01-21 19:09:43] [INFO] Starting RTL simulation: fifo
+[2026-01-21 19:09:43] [INFO] RTL simulation completed: fifo
+[2026-01-21 19:09:43] [INFO] Starting RTL simulation: fsm
+[2026-01-21 19:09:43] [INFO] RTL simulation completed: fsm
+[2026-01-21 19:09:43] [INFO] 
+============================================================
+[2026-01-21 19:09:43] [INFO] PHASE 2: KERNEL DRIVER
+[2026-01-21 19:09:43] [INFO] ============================================================
+[2026-01-21 19:09:43] [INFO] Starting kernel driver test
+[2026-01-21 19:09:59] [INFO] Driver test completed
+[2026-01-21 19:09:59] [INFO] 
+============================================================
+[2026-01-21 19:09:59] [INFO] PHASE 3: USERSPACE
+[2026-01-21 19:09:59] [INFO] ============================================================
+[2026-01-21 19:09:59] [INFO] Compiling userspace programs
+[2026-01-21 19:09:59] [INFO] ✓ C program compiled
+[2026-01-21 19:09:59] [INFO] ✓ C++ program compiled
+[2026-01-21 19:09:59] [INFO] Running userspace tests
+[2026-01-21 19:09:59] [INFO] Testing C program (driver latency)...
+[2026-01-21 19:09:59] [INFO] C test output:
+Device opened, fd=3
+write OK: 4 bytes written
+Latency: 6830664394610 ns
+
+[2026-01-21 19:09:59] [INFO] Running C++ benchmark...
+[2026-01-21 19:09:59] [INFO] C++ benchmark output:
+RTL-Kernel-Stack Userspace Test
+===============================
+
+Test   1/100: Latency:   4813 ns
+Test   2/100: Latency:   1477 ns
+Test   3/100: Latency:   1267 ns
+Test   4/100: Latency:   1198 ns
+Test   5/100: Latency:   1638 ns
+Test   6/100: Latency:   1576 ns
+Test   7/100: Latency:   1655 ns
+Test   8/100: Latency:   1790 ns
+Test   9/100: Latency:   1592 ns
+Test  10/100: Latency:   1514 ns
+Test  11/100: Latency:   1440 ns
+Test  12/100: Latency:   1549 ns
+Test  13/100: Latency:   1472 ns
+Test  14/100: Latency:   1620 ns
+Test  15/100: Latency:   1484 ns
+Test  16/100: Latency:   1812 ns
+Test  17/100: Latency:   1841 ns
+Test  18/100: Latency:   2131 ns
+Test  19/100: Latency:   1705 ns
+Test  20/100: Latency:   1338 ns
+Test  21/100: Latency:   1548 ns
+Test  22/100: Latency:   1537 ns
+Test  23/100: Latency:   1779 ns
+Test  24/100: Latency:   1805 ns
+Test  25/100: Latency:   1282 ns
+Test  26/100: Latency:   1207 ns
+Test  27/100: Latency:   1187 ns
+Test  28/100: Latency:   1180 ns
+Test  29/100: Latency:   1197 ns
+Test  30/100: Latency:   1198 ns
+Test  31/100: Latency:   1229 ns
+Test  32/100: Latency:   1156 ns
+Test  33/100: Latency:   1214 ns
+Test  34/100: Latency:   1195 ns
+Test  35/100: Latency:   1182 ns
+Test  36/100: Latency:   1581 ns
+Test  37/100: Latency:   1203 ns
+Test  38/100: Latency:   1254 ns
+Test  39/100: Latency:   1199 ns
+Test  40/100: Latency:   1288 ns
+Test  41/100: Latency:   1179 ns
+Test  42/100: Latency:   1287 ns
+Test  43/100: Latency:   1207 ns
+Test  44/100: Latency:   1255 ns
+Test  45/100: Latency:   1177 ns
+Test  46/100: Latency:   1247 ns
+Test  47/100: Latency:   1205 ns
+Test  48/100: Latency:   1254 ns
+Test  49/100: Latency:   1187 ns
+Test  50/100: Latency:   1396 ns
+Test  51/100: Latency:   1199 ns
+Test  52/100: Latency:   1242 ns
+Test  53/100: Latency:   1194 ns
+Test  54/100: Latency:   1254 ns
+Test  55/100: Latency:   1209 ns
+Test  56/100: Latency:   1247 ns
+Test  57/100: Latency:   1169 ns
+Test  58/100: Latency:   1257 ns
+Test  59/100: Latency:   1208 ns
+Test  60/100: Latency:   1232 ns
+Test  61/100: Latency:   1427 ns
+Test  62/100: Latency:   1273 ns
+Test  63/100: Latency:   1206 ns
+Test  64/100: Latency:   1248 ns
+Test  65/100: Latency:   1163 ns
+Test  66/100: Latency:   1252 ns
+Test  67/100: Latency:   1193 ns
+Test  68/100: Latency:   1239 ns
+Test  69/100: Latency:   1204 ns
+Test  70/100: Latency:   1259 ns
+Test  71/100: Latency:   1211 ns
+Test  72/100: Latency:   1237 ns
+Test  73/100: Latency:   1168 ns
+Test  74/100: Latency:   1267 ns
+Test  75/100: Latency:   1210 ns
+Test  76/100: Latency:   1262 ns
+Test  77/100: Latency:   1577 ns
+Test  78/100: Latency:   1257 ns
+Test  79/100: Latency:   1194 ns
+Test  80/100: Latency:   1240 ns
+Test  81/100: Latency:   1162 ns
+Test  82/100: Latency:   1266 ns
+Test  83/100: Latency:   1197 ns
+Test  84/100: Latency:   1264 ns
+Test  85/100: Latency:   1177 ns
+Test  86/100: Latency:   1257 ns
+Test  87/100: Latency:   1190 ns
+Test  88/100: Latency:   1241 ns
+Test  89/100: Latency:   1181 ns
+Test  90/100: Latency:   1247 ns
+Test  91/100: Latency:   1244 ns
+Test  92/100: Latency:   1239 ns
+Test  93/100: Latency:   1179 ns
+Test  94/100: Latency:   1252 ns
+Test  95/100: Latency:   1212 ns
+Test  96/100: Latency:   1266 ns
+Test  97/100: Latency:   1183 ns
+Test  98/100: Latency:   1260 ns
+Test  99/100: Latency:   1305 ns
+Test 100/100: Latency:   1244 ns
+
+===============================
+Test Summary:
+  Successful tests: 100/100
+  Failed tests:     0
+
+Latency Statistics:
+  Average: 1355.91 ns
+  Minimum: 1156 ns
+  Maximum: 4813 ns
+  Range:   3657 ns
+
+Alternative units:
+  Average: 1.356 μs
+  Average: 0.001356 ms
+
+[2026-01-21 19:09:59] [INFO] 
+============================================================
+[2026-01-21 19:09:59] [INFO] PHASE 4: ANALYSIS
+[2026-01-21 19:09:59] [INFO] ============================================================
+[2026-01-21 19:09:59] [INFO] Running analysis
+[2026-01-21 19:09:59] [INFO] Analysis output:
+Found log file: results/logs/fifo.log
+No simulation log files found or no data in logs.
+Running simulation first...
+
+[2026-01-21 19:09:59] [INFO] 
+============================================================
+[2026-01-21 19:09:59] [INFO] EXECUTION COMPLETED SUCCESSFULLY!
+[2026-01-21 19:09:59] [INFO] ============================================================
+[2026-01-21 19:09:59] [INFO] Logs available at: /home/alkaleus/rtl-kernel-stack/results/logs
+[2026-01-21 19:09:59] [INFO] Results at: /home/alkaleus/rtl-kernel-stack/results

@@ -1,0 +1,1 @@
+savedcmd_ll_driver.ko := ld -r -m elf_x86_64 --compress-debug-sections=zlib -z noexecstack --no-warn-rwx-segments --build-id=sha1  -T /usr/src/kernels/6.18.5-100.fc42.x86_64/scripts/module.lds -o ll_driver.ko ll_driver.o ll_driver.mod.o .module-common.o
