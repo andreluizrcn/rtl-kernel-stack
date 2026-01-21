@@ -1,0 +1,21 @@
+[2026-01-21 18:20:51] [INFO] ============================================================
+[2026-01-21 18:20:51] [INFO] STARTING RTL-KERNEL-STACK - COMPLETE EXECUTION
+[2026-01-21 18:20:51] [INFO] ============================================================
+[2026-01-21 18:20:51] [INFO] 
+============================================================
+[2026-01-21 18:20:51] [INFO] PHASE 1: RTL SIMULATION
+[2026-01-21 18:20:51] [INFO] ============================================================
+[2026-01-21 18:20:51] [INFO] Starting RTL simulation: fifo
+[2026-01-21 18:23:39] [INFO] ============================================================
+[2026-01-21 18:23:39] [INFO] STARTING RTL-KERNEL-STACK - COMPLETE EXECUTION
+[2026-01-21 18:23:39] [INFO] ============================================================
+[2026-01-21 18:23:39] [INFO] 
+============================================================
+[2026-01-21 18:23:39] [INFO] PHASE 1: RTL SIMULATION
+[2026-01-21 18:23:39] [INFO] ============================================================
+[2026-01-21 18:23:39] [INFO] Starting RTL simulation: fifo
+[2026-01-21 18:23:39] [ERROR] RTL simulation failed: fifo
+[2026-01-21 18:23:39] [ERROR] Stderr: /home/alkaleus/rtl-kernel-stack/scripts/rtl/fifo/sync_fifo.sv: No such file or directory
+No top level modules, and no -s option.
+
+[2026-01-21 18:23:39] [ERROR] Stopping execution due to failure in fifo
